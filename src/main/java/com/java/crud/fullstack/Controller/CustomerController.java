@@ -1,5 +1,6 @@
 package com.java.crud.fullstack.Controller;
 
+import com.java.crud.fullstack.dto.CustomerDTO;
 import com.java.crud.fullstack.entity.Customer;
 import com.java.crud.fullstack.service.CustomerService;
 import org.springframework.web.bind.annotation.*;
@@ -17,22 +18,23 @@ public class CustomerController {
     }
 
     @PostMapping("/save")
-    public Customer saveCustomer(@RequestBody Customer customer){
+    public CustomerDTO saveCustomer(@RequestBody Customer customer){
         return this.customerService.save(customer);
+
     }
 
     @GetMapping
-    public List<Customer> getAllCustomers() {
+    public List<CustomerDTO> getAllCustomers() {
         return this.customerService.findAllCustomers();
     }
 
     @GetMapping("/{idCustomer}")
-    public Customer getById(@PathVariable("idCustomer") Integer id) {
+    public CustomerDTO getById(@PathVariable("idCustomer") Integer id) {
         return this.customerService.findCustomerById(id);
     }
 
     @PutMapping("/update")
-    public Customer updateCustomer(@RequestBody Customer customer){
+    public CustomerDTO updateCustomer(@RequestBody Customer customer){
         return this.customerService.save(customer);
     }
 

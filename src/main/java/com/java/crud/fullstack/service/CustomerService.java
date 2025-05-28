@@ -1,15 +1,17 @@
 package com.java.crud.fullstack.service;
 
 import com.java.crud.fullstack.entity.Customer;
+import com.java.crud.fullstack.dto.CustomerDTO;
+
 
 import java.util.List;
 
 
 public interface CustomerService {
 
-    Customer save(Customer customer);
-    Customer findCustomerById(Integer id);
-    List<Customer> findAllCustomers();
-    Customer updateCustomer(Customer customer);
+    CustomerDTO save(Customer customer);
+    CustomerDTO findCustomerById(Integer id);
+    List<CustomerDTO> findAllCustomers();
+    CustomerDTO updateCustomer(Customer customer);
     void deleteCustomerById(Integer id);
 }
